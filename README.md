@@ -2,6 +2,19 @@
 
 A flexible content management system written in and for node.js !
 
+[![NPM](https://nodei.co/npm/towel.png)](https://nodei.co/npm/towel/)
+
+## Install
+
+Prerequisite:
+
+1. Node.js (<http://nodejs.org/>)
+2. MongoDB (<http://www.mongodb.org/>)
+
+```sh
+npm install -g towel
+```
+
 ## Guide
 
 Towel is meant as an executeable to "run" your projects.  
