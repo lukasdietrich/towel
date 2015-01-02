@@ -6,6 +6,11 @@ A flexible content management system written in and for node.js !
 
 ## Install
 
+Prerequisite:
+
+1. Node.js (<http://nodejs.org/>)
+2. MongoDB (<http://www.mongodb.org/>)
+
 ```sh
 npm install -g towel
 ```
