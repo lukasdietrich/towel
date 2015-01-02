@@ -2,11 +2,21 @@
   "name": "towel",
   "version": "0.0.1",
   "description": "A super simple, flexible content management system.",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "bin": {
+    "towel": "./lib/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lukas Dietrich <lukas@lukasdietrich.com>",
+  "repository": { 
+    "type" : "git", 
+    "url" : "http://github.com/lukasdietrich/towel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lukasdietrich/towel/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^0.8.0",
