@@ -1,0 +1,93 @@
+@import url("//fonts.googleapis.com/css?family=Lato");
+
+$green: #16a085;
+$red: #c0392b;
+
+$sans: "Lato", sans-serif;
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: $sans;
+    background-color: darken(#fff, 85%);
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input {
+    font-size: 1em;
+    font-family: $sans;
+    border: none;
+    outline: none;
+}
+
+.formwrap {
+    position: absolute;
+    top: 50%; left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+
+    box-shadow: 0 .2em 1em -.3em #000;
+    
+    h1 {
+        margin: 0;
+        padding: 1em 0 0 0;
+        text-align: center;
+
+        color: $green;
+
+        &::before, &::after { 
+            content: "-";
+            margin: 0 .5em;
+            color: desaturate(lighten($green, 40%), 50%);
+        }
+    }
+
+    .err {
+        display: block;
+        padding: 1em;
+        text-align: center;
+
+        color: lighten($red, 40%);
+        background-color: $red;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+    }
+
+    .inputs {
+        padding: 1em;
+
+        input {
+            margin-top: 1em;
+            padding: .5em 1em;
+
+            border: .2em solid darken(#fff, 10%);
+        }
+    }
+
+    input[type=submit] {
+        padding: 1em;
+        font-weight: bold;
+
+        color: lighten($green, 50%);
+
+        border-bottom: .3em solid darken($green, 10%);
+        background-color: $green;
+
+        cursor: pointer;
+    }
+}

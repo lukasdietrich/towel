@@ -1,0 +1,62 @@
+@import url("//fonts.googleapis.com/css?family=Lato");
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #262626; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input {
+  font-size: 1em;
+  font-family: "Lato", sans-serif;
+  border: none;
+  outline: none; }
+
+.formwrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 .2em 1em -.3em #000; }
+  .formwrap h1 {
+    margin: 0;
+    padding: 1em 0 0 0;
+    text-align: center;
+    color: #16a085; }
+    .formwrap h1::before, .formwrap h1::after {
+      content: "-";
+      margin: 0 .5em;
+      color: #b1d1cb; }
+  .formwrap .err {
+    display: block;
+    padding: 1em;
+    text-align: center;
+    color: #f2c9c5;
+    background-color: #c0392b; }
+  .formwrap input {
+    display: block;
+    width: 100%; }
+  .formwrap .inputs {
+    padding: 1em; }
+    .formwrap .inputs input {
+      margin-top: 1em;
+      padding: .5em 1em;
+      border: 0.2em solid #e6e6e6; }
+  .formwrap input[type=submit] {
+    padding: 1em;
+    font-weight: bold;
+    color: #bff6eb;
+    border-bottom: 0.3em solid #107360;
+    background-color: #16a085;
+    cursor: pointer; }
+
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,39 @@
+if ajax
+    #actions
+        block actions
+    #content
+        block content
+else
+    doctype html
+    html
+        head
+            meta(charset="utf-8")
+            title Towel.js
+
+            meta(name="viewport", content="width=device-width, initial-scale=1")
+
+            each sheet in [ "main", "vendor/nprogress", "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min" ]
+                link(rel="stylesheet", href=((sheet.indexOf("//") === 0) ? sheet : "/towel/css/" + sheet) + ".css")
+        body
+            .wrapper
+                header
+                    h1 
+                        a(href="/towel") Towel.js
+                   
+                    .right
+                        .actions
+                            block actions
+                        nav.collection-select
+                            span.current= collection || "Select a collection"
+                            ul
+                                each collection in collections
+                                    li
+                                        a(href="/towel/" + encodeURIComponent(collection))= collection
+
+                    span.notify
+
+                .main
+                    block content
+
+            each script in [ "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min", "vendor/marked.min", "vendor/nprogress", "main" ]
+                script(src=((script.indexOf("//") === 0) ? script : "/towel/js/" + script) + ".js")

@@ -1,0 +1,229 @@
+@import url("//fonts.googleapis.com/css?family=Lato|Ubuntu+Mono");
+html, body {
+  margin: 0;
+  font-family: "Lato", sans-serif; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input, textarea {
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+  outline: none; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+header {
+  position: relative;
+  background-color: #16a085;
+  height: 4rem;
+  padding: 0 1em;
+  line-height: 4rem;
+  z-index: 500; }
+  header h1 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem; }
+    header h1 a {
+      color: #92f0de; }
+  header h1, header nav, header .actions {
+    display: inline-block; }
+  header .right {
+    float: right; }
+  header .actions {
+    margin-right: 1em; }
+    header .actions a {
+      color: #92f0de; }
+  header .notify {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    padding: 0 1em;
+    line-height: 2em;
+    border-style: solid;
+    border-width: .2em 0 0;
+    background-color: #e6e6e6;
+    z-index: 400;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    header .notify.info {
+      border-color: #16a085; }
+    header .notify.err {
+      border-color: #c0392b; }
+  header nav {
+    position: relative;
+    margin-left: 1em;
+    cursor: default; }
+    header nav span, header nav li {
+      text-transform: capitalize; }
+    header nav .current {
+      display: inline-block;
+      height: 2rem;
+      line-height: 2rem;
+      padding: 0 1em;
+      color: #0a463a;
+      background-color: #1ccdaa; }
+    header nav ul {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      line-height: 2rem;
+      background-color: #107360;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transform: translateX(0.5em);
+      -moz-transform: translateX(0.5em);
+      transform: translateX(0.5em);
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: opacity, visibility, transform;
+      -moz-transition-property: opacity, visibility, transform;
+      transition-property: opacity, visibility, transform; }
+      header nav ul li a {
+        display: block;
+        padding: 0 1em;
+        color: #1ccdaa; }
+    header nav:hover ul {
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      transform: translateX(0); }
+
+.main .info {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+  margin: 2em auto;
+  padding: 1em 1em 1em 3em;
+  border: 0.1em solid #e6e6e6;
+  border-radius: .3em;
+  background-color: #f7f7f7; }
+  .main .info::before {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    content: "\f069";
+    color: gray;
+    font-size: 2em;
+    font-family: "FontAwesome"; }
+.main .documents {
+  width: 100%; }
+  .main .documents li {
+    padding: 1em; }
+    .main .documents li:not(:last-child) {
+      border-bottom: 0.1em solid #e6e6e6; }
+    .main .documents li:nth-child(even) {
+      background-color: #f7f7f7; }
+  .main .documents .right {
+    float: right; }
+  .main .documents span {
+    margin-right: 1em; }
+  .main .documents span, .main .documents a {
+    display: inline-block;
+    padding: .3em 1em; }
+  .main .documents span::before, .main .documents a::before {
+    font-family: "FontAwesome";
+    margin-right: .5em; }
+  .main .documents .doc-id {
+    font-family: "Ubuntu Mono", monospace;
+    border-radius: .3em;
+    color: #f2c9c5;
+    background-color: #c0392b; }
+    .main .documents .doc-id::before {
+      content: "\f084"; }
+  .main .documents .doc-created::before {
+    content: "\f0c7"; }
+  .main .documents .doc-edit::before, .main .documents .doc-modified::before {
+    content: "\f044"; }
+  .main .documents .doc-delete::before {
+    content: "\f014"; }
+  .main .documents .doc-edit {
+    color: #2980b9; }
+  .main .documents .doc-delete {
+    color: #c0392b; }
+.main form {
+  width: 100%;
+  padding: 1em 2em;
+  overflow: hidden; }
+  .main form label {
+    display: block;
+    margin: 1em 0 .5em;
+    font-size: 1.1em;
+    color: #4d4d4d;
+    text-transform: capitalize; }
+    .main form label i {
+      margin-left: 1em;
+      font-style: normal;
+      font-size: .8em;
+      color: #999999; }
+  .main form input[type=submit] {
+    float: right;
+    border: none;
+    margin: 1em 0;
+    padding: .5em 1em;
+    border-bottom: 0.3em solid #0a463a;
+    border-radius: .3em;
+    color: #bff6eb;
+    background-color: #16a085;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: border, transform;
+    -moz-transition-property: border, transform;
+    transition-property: border, transform; }
+    .main form input[type=submit]:active {
+      border-width: 0;
+      -webkit-transform: translateY(0.3em);
+      -moz-transform: translateY(0.3em);
+      transform: translateY(0.3em); }
+  .main form li div, .main form li input, .main form li > textarea, .main form li .split-editor {
+    width: 100%; }
+  .main form li input {
+    padding: .5em 1em; }
+  .main form li textarea {
+    padding: 1em; }
+  .main form li input, .main form li > textarea, .main form li .split-editor {
+    border: 0.2em solid #e6e6e6;
+    border-radius: .1em; }
+  .main form li .split-editor {
+    overflow: hidden; }
+    .main form li .split-editor textarea {
+      resize: vertical;
+      border: 0 solid #e6e6e6;
+      border-right-width: .2em; }
+    .main form li .split-editor textarea, .main form li .split-editor .split-output {
+      display: block;
+      width: 0;
+      margin: 0;
+      width: 50%;
+      min-height: 300px;
+      float: left; }
+    .main form li .split-editor .split-output {
+      padding: 0 1em; }
+      .main form li .split-editor .split-output h1, .main form li .split-editor .split-output h2, .main form li .split-editor .split-output h3, .main form li .split-editor .split-output h4, .main form li .split-editor .split-output h5, .main form li .split-editor .split-output h6 {
+        margin: .5em 0; }
+      .main form li .split-editor .split-output h1 {
+        font-size: 1.5em; }
+      .main form li .split-editor .split-output h2 {
+        font-size: 1.4em; }
+      .main form li .split-editor .split-output h3 {
+        font-size: 1.3em; }
+      .main form li .split-editor .split-output h4, .main form li .split-editor .split-output h5, .main form li .split-editor .split-output h6 {
+        font-size: 1.2em; }
+  .main form li:not(:last-child) {
+    margin-bottom: 1em; }
+
+/*# sourceMappingURL=main.css.map */

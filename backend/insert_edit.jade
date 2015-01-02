@@ -1,0 +1,33 @@
+extends layout
+
+mixin form_element(key, value, type)
+    case type
+        when "number"
+            input(name=key, type="number", placeholder="field-" + key, value=value)
+
+        when "date"
+            input(name=key, type="date", placeholder="field-" + key, value=value)
+
+        when "string"
+            input(name=key, type="text", placeholder="field-" + key, value=value)
+
+        when "text"
+            textarea(name=key, placeholder="field-" + key)= value.raw
+
+        when "markdown"
+            textarea(name=key, placeholder="field-" + key).markdown= value.raw
+
+        default
+            span Undefined column definition. Check your towels and/or submit a bug report
+
+block content
+    form(method="post", action="/towel/" + encodeURIComponent(collection) + "/" + (doc && (doc._id + "/edit") || "insert"))
+        ul
+            each def in structure
+                li
+                    label(for=def.key)
+                        = def.key
+                        i= "(" + def.type + ")"
+                    +form_element(def.key, doc && doc[def.key] || "", def.type)
+
+        input(type="submit", value= doc && "edit" || "insert")

@@ -1,0 +1,359 @@
+@import url("//fonts.googleapis.com/css?family=Lato|Ubuntu+Mono");
+
+$green: #16a085;
+$red: #c0392b;
+$blue: #2980b9;
+
+$sans: "Lato", sans-serif;
+$mono: "Ubuntu Mono", monospace;
+$fontawesome: "FontAwesome";
+
+@mixin prefix($name, $argument...) {
+    -webkit-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}
+
+@mixin transition($duration, $properties...) {
+    @include prefix(transition-duration, $duration);
+    @include prefix(transition-property, $properties);
+}
+
+html, body {
+    margin: 0;
+
+    font-family: $sans;
+}
+
+* {
+    @include prefix(box-sizing, border-box);
+}
+
+input, textarea {
+    font-family: $sans;
+    font-size: 1em;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    background-color: $green;
+
+    height: 4rem;
+    padding: 0 1em;
+    line-height: 4rem;
+
+    z-index: 500;
+
+    h1 {
+        float: left;
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+
+        a {
+            color: lighten($green, 40%);
+        }
+    }
+
+    h1, nav, .actions {
+        display: inline-block;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .actions {
+        margin-right: 1em;
+
+        a {
+            color: lighten($green, 40%);
+        }
+    }
+
+    .notify {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+
+        padding: 0 1em;
+        line-height: 2em;
+
+        border-style: solid;
+        border-width: .2em 0 0;
+
+        background-color: darken(#fff, 10%);
+
+        z-index: 400;
+        @include prefix (transform, translateX(-50%));
+    
+        &.info {
+            border-color: $green;
+        }
+
+        &.err {
+            border-color: $red;
+        }
+    }
+
+    nav {
+        position: relative;
+        margin-left: 1em;
+        cursor: default;
+
+        span, li {
+            text-transform: capitalize;
+        }
+
+        .current {
+            display: inline-block;
+
+            height: 2rem;
+            line-height: 2rem;
+            padding: 0 1em;
+            
+            color: darken($green, 20%);
+            background-color: lighten($green, 10%);
+        }
+
+        ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            line-height: 2rem;
+            background-color: darken($green, 10%);
+
+            visibility: hidden;
+            opacity: 0;
+
+            @include prefix(transform, translateX(.5em));
+            @include transition(.3s, opacity, visibility, transform);
+
+            li {            
+                a {
+                    display: block;
+                    padding: 0 1em;
+                    color: lighten($green, 10%);
+                }
+            }
+        }
+
+        &:hover ul {
+            visibility: visible;
+            opacity: 1;
+            @include prefix(transform, translateX(0));
+        }
+    }
+}
+
+.main {
+
+    .info {
+        position: relative;
+
+        width: 500px;
+        max-width: 100%;
+
+        margin: 2em auto;
+        padding: 1em 1em 1em 3em;
+
+        border: .1em solid darken(#fff, 10%);
+        border-radius: .3em;
+    
+        background-color: darken(#fff, 3%);
+
+        &::before {
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
+
+            content: "\f069";
+            color: darken(#fff, 50%);
+            font-size: 2em;
+            font-family: $fontawesome;
+        }
+    }
+
+    .documents {
+        width: 100%;
+
+        li {
+            padding: 1em;
+
+            &:not(:last-child) {
+                border-bottom: .1em solid darken(#fff, 10%);
+            }
+
+            &:nth-child(even) {
+                background-color: darken(#fff, 3%);
+            }
+        }
+
+        .right {
+            float: right;
+        }
+
+        span {
+            margin-right: 1em;
+        }
+
+        span, a {
+            display: inline-block;
+            padding: .3em 1em;
+        }
+
+        span::before, a::before {
+            font-family: $fontawesome;
+            margin-right: .5em;
+        }
+        
+        .doc-id {
+            font-family: $mono;
+            border-radius: .3em;
+            
+            color: lighten($red, 40%);
+            background-color: $red;
+
+            &::before {
+                content: "\f084";
+            }
+        }
+
+        .doc-created::before {
+            content: "\f0c7";
+        }
+
+        .doc-edit::before, .doc-modified::before {
+            content: "\f044";
+        }
+
+        .doc-delete::before {
+            content: "\f014";
+        }
+
+        .doc-edit {
+            color: $blue;
+        }
+
+        .doc-delete {
+            color: $red;
+        }
+
+    }
+
+    form {
+        width: 100%;
+        padding: 1em 2em;
+        overflow: hidden;
+    
+        label {
+            display: block;
+            margin: 1em 0 .5em;
+
+            font-size: 1.1em;
+            color: darken(#fff, 70%);
+            text-transform: capitalize;
+
+            i {
+                margin-left: 1em;
+
+                font-style: normal;
+                font-size: .8em;
+                
+                color: darken(#fff, 40%);
+            }
+        }
+
+        input[type=submit] {
+            float: right;
+            border: none;
+
+            margin: 1em 0;
+            padding: .5em 1em;
+
+            border-bottom: .3em solid darken($green, 20%);
+            border-radius: .3em;
+
+            color: lighten($green, 50%);
+            background-color: $green;
+
+            cursor: pointer;
+            @include transition(.3s, border, transform);
+
+            &:active {
+                border-width: 0;
+                @include prefix(transform, translateY(.3em));
+            }
+        }
+
+        li {
+            div, input, > textarea, .split-editor {
+                width: 100%;
+            }
+
+            input {
+                padding: .5em 1em;
+            }
+
+            textarea {
+                padding: 1em;
+            }
+
+            input, > textarea, .split-editor {
+                border: .2em solid darken(#fff, 10%);
+                border-radius: .1em;
+            }
+
+            .split-editor {
+                overflow: hidden;
+
+                textarea {
+                    resize: vertical;
+                    
+                    border: 0 solid darken(#fff, 10%);
+                    border-right-width: .2em;
+                }
+
+                textarea, .split-output {
+                    display: block;
+                    width: 0;
+                    margin: 0;
+                    
+                    width: 50%;
+                    min-height: 300px;
+
+                    float: left;
+                }
+
+                .split-output {
+                    padding: 0 1em;
+
+                    h1, h2, h3, h4, h5, h6 {
+                        margin: .5em 0;
+                    }
+
+                    h1 { font-size: 1.5em }
+                    h2 { font-size: 1.4em }
+                    h3 { font-size: 1.3em }
+                    h4, h5, h6 { font-size: 1.2em }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1em;
+            }
+        }
+    }
+}

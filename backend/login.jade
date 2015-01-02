@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Towel.js | Login
+
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="css/login.css")
+    body
+        .wrapper
+            .formwrap
+                form(action="/towel/login", method="post")
+                    if err
+                        span.err= err
+                    h1 Towel.js
+                    .inputs
+                        input(type="text", name="mail", placeholder="email@addess.com")
+                        input(type="password", name="pass", placeholder="password")
+                    input(type="submit", value="login")

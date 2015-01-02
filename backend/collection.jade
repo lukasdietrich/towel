@@ -1,0 +1,26 @@
+extends layout
+
+block actions
+    ul
+        li
+            a(href="/towel/" + collection + "/insert") insert
+
+block content
+    if docs.length > 0
+        ul.documents
+            each doc in docs
+                li
+                    span(title="Unique ID").doc-id= doc._id
+                    span(title="Creation date").doc-created= doc._created
+                    
+                    if doc._created !== doc._modified
+                        span(title="Last modification date").doc-modified= doc._modified
+
+                    div.right.doc-actions
+                        a(href="/towel/" + collection + "/" + doc._id + "/edit").doc-edit edit
+                        a(href="/towel/" + collection + "/" + doc._id + "/delete").doc-delete delete
+    else
+        p.info
+            | There are no documents, yet. <br>
+            | You can insert one by clicking on "insert"
+            | in the top right.
