@@ -1,6 +1,6 @@
 {
   "name": "towel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A super simple, flexible content management system.",
   "main": "./lib/index.js",
   "bin": {
@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^0.8.0",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.10.0",
     "chalk": "^0.5.1",
     "dateformat": "^1.0.11",
