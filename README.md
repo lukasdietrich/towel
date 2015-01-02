@@ -4,6 +4,12 @@ A flexible content management system written in and for node.js !
 
 [![NPM](https://nodei.co/npm/towel.png)](https://nodei.co/npm/towel/)
 
+## Install
+
+```sh
+npm install -g towel
+```
+
 ## Guide
 
 Towel is meant as an executeable to "run" your projects.  
