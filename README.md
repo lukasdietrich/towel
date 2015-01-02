@@ -131,6 +131,8 @@ then you can start up the service with
 towel -p "/path/of/project" start
 ```
 
+now a webinterface is accessible at `http://host:port/towel`
+
 ## License
 
 ```
