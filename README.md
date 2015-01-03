@@ -1,8 +1,7 @@
-# towel
+# towel 
+[![npm version](https://badge.fury.io/js/towel.png)](http://badge.fury.io/js/towel)
 
 A flexible content management system written in and for node.js !
-
-[![NPM](https://nodei.co/npm/towel.png)](https://nodei.co/npm/towel/)
 
 ## Install
 
@@ -11,8 +10,8 @@ Prerequisite:
 1. Node.js (<http://nodejs.org/>)
 2. MongoDB (<http://www.mongodb.org/>)
 
-```sh
-npm install -g towel
+```bash
+# sudo npm install -g towel
 ```
 
 ## Guide
@@ -134,21 +133,21 @@ From within a jade template you have access to three variables: `views`, `view` 
 
 First you need to add a user to the database:
 
-```sh
-towel -p "/path/of/project" adduser
+```bash
+$ towel -p "/path/of/project" adduser
 ```
 
 then you can start up the service with
 
-```sh
-towel -p "/path/of/project" start
+```bash
+$ towel -p "/path/of/project" start
 ```
 
 now a webinterface is accessible at `http://host:port/towel`
 
 ## License
 
-```
+```plain
 The MIT License (MIT)
 
 Copyright (c) 2015 Lukas Dietrich
