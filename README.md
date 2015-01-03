@@ -11,7 +11,7 @@ Prerequisite:
 2. MongoDB (<http://www.mongodb.org/>)
 
 ```bash
-# sudo npm install -g towel
+$ sudo npm install -g towel
 ```
 
 ## Guide
