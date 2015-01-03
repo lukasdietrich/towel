@@ -1,10 +1,10 @@
 {
   "name": "towel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A super simple, flexible content management system.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "bin": {
-    "towel": "index.js"
+    "towel": "./lib/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
