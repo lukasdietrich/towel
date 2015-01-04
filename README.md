@@ -1,4 +1,6 @@
 # towel 
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/lukasdietrich/towel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![npm version](https://badge.fury.io/js/towel.png)](http://badge.fury.io/js/towel)
 
 A flexible content management system written in and for node.js !
