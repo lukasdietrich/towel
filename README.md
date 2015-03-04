@@ -97,8 +97,9 @@ module.exports = function (collection, route, types, objectid) {
 
 #### 2.1) Model Arguments
 
-- `collection(name: string, structure: object)`  
+- `collection(name: string, structure: object, [(optional) significantKey: string])`  
   creates a collection, that validates a given structure.  
+  If a significant key is specified, it will be shown in backend list.
 
 - `route(url: string, handler: function)`  
   creates a route in the context of a model  
