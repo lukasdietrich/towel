@@ -16,6 +16,10 @@ block content
                     if doc._created !== doc._modified
                         span(title="Last modification date").doc-modified= doc._modified
 
+                    if significantKey !== false
+                        span(title="Significant Key").doc-key= doc[significantKey]
+
+
                     div.right.doc-actions
                         a(href="/towel/" + collection + "/" + doc._id + "/edit").doc-edit edit
                         a(href="/towel/" + collection + "/" + doc._id + "/delete").doc-delete delete
