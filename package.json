@@ -18,9 +18,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lukas Dietrich <lukas@lukasdietrich.com>",
-  "repository": { 
-    "type" : "git", 
-    "url" : "http://github.com/lukasdietrich/towel.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lukasdietrich/towel.git"
   },
   "bugs": {
     "url": "https://github.com/lukasdietrich/towel/issues"
@@ -40,6 +40,7 @@
     "moment": "^2.8.4",
     "mongodb": "^1.4.26",
     "prompt": "^0.2.14",
+    "short-mongo-id": "^0.1.1",
     "sprintf": "^0.1.5",
     "yargs": "^1.3.3"
   }

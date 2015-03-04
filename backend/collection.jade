@@ -10,7 +10,7 @@ block content
         ul.documents
             each doc in docs
                 li
-                    span(title="Unique ID").doc-id= doc._id
+                    span(title="Unique ID").doc-id= doc._shortid
                     span(title="Creation date").doc-created= doc._created
                     
                     if doc._created !== doc._modified
